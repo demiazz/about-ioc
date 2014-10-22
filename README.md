@@ -1,5 +1,5 @@
-### Презентация «PostCSS: будущее после Sass и LESS»
+### Презентация «Inversion Of Control»
 
 Для выступления на [SPB Frontend](https://vk.com/spb_frontend).
 
-Посмотреть: [ai.github.io/about-postcss](http://ai.github.io/about-postcss/).
+Посмотреть: [demiazz.github.io/ioc-slides](http://demiazz.github.io/ioc-slides/).
