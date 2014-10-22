@@ -205,6 +205,40 @@ class Highlighter < Redcarpet::Render::HTML
   def mark_svg(code)
     css(code).gsub(/data:.*/, '<mark class="important">\0</mark>')
   end
+
+  def javascript(code)
+    code.gsub(/for /, '<mark>\\0</mark>')
+        .gsub(/if /, '<mark>\\0</mark>')
+        .gsub(/var /, '<mark>\\0</mark>')
+        .gsub(/ new /, '<mark>\\0</mark>')
+        .gsub(/do /, '<mark>\\0</mark>')
+        .gsub(/ while /, '<mark>\\0</mark>')
+        .gsub(/ else /, '<mark>\\0</mark>')
+        .gsub(/ in /, '<mark>\\0</mark>')
+        .gsub(/function /, '<mark>\\0</mark>')
+        .gsub(/throw /, '<mark>\\0</mark>')
+        .gsub(/while /, '<mark>\\0</mark>')
+        .gsub(/return /, '<mark>\\0</mark>')
+        .gsub(/try /, '<mark>\\0</mark>')
+        .gsub(/ finally /, '<mark>\\0</mark>')
+        .gsub(/ catch /, '<mark>\\0</mark>')
+        .gsub(/null/, '<mark>\\0</mark>')
+        .gsub(/switch /, '<mark>\\0</mark>')
+        .gsub(/case/, '<mark>\\0</mark>')
+        .gsub(/return/, '<mark>\\0</mark>')
+        .gsub(/default/, '<mark>\\0</mark>')
+        .gsub(/break/, '<mark>\\0</mark>')
+        .gsub(/true/, '<mark>\\0</mark>')
+        .gsub(/false/, '<mark>\\0</mark>')
+        .gsub(/&amp;&amp;/, '<mark>\\0</mark>')
+        .gsub(/\|\|/, '<mark>\\0</mark>')
+        .gsub(/typeof/, '<mark>\\0</mark>')
+        .gsub(/"[^"]*"/, '<mark class="string">\\0</mark>')
+        .gsub(/\/\*[^(\*\/)]*\*\//, '<mark class="comment">\\0</mark>')
+        .gsub(/( \? | : )/, '<mark>\\0</mark>')
+        .gsub(/(\ *)?\/\/.*/, '<mark class="comment">\\0</mark>')
+        .gsub(/(this|\${1,2}\w+)/, '<mark class="strong">\\0</mark>')
+  end
 end
 
 class Builder
@@ -317,7 +351,8 @@ task :server do
 
     {
       css: 'text/css',  js:  'text/javascript',
-      png: 'image/png', jpg: 'image/jpeg', ico: 'image/vnd.microsoft.icon'
+      png: 'image/png', jpg: 'image/jpeg', ico: 'image/vnd.microsoft.icon',
+      svg: 'image/svg'
     }.each_pair do |ext, mime|
       get "/*.#{ ext }" do |path|
         content_type mime

@@ -1,15 +1,49 @@
 @import "evil-front"
 
+.slide
+  mark
+    padding: 0 !important
+
+  mark.comment
+    color: #aaa !important
+    font-weight: normal
+
+    mark
+      color: #aaa !important
+
+  mark.tag
+    color: green
+
+  mark.string
+    color: green !important
+    font-weight: normal
+
+    mark
+      color: green
+      font-weight: normal
+
+  mark.block
+    color: #12629f
+    font-weight: bold
+
+  mark.handlebars
+    color: #12629f
+
+    mark
+      color: #12629f !important
+
 .slide.is-title
   h2
     font-size: 32px
     strong
       display: block
       font-weight: normal
-      font-size: 350%
+      font-size: 250%
       line-height: 1.35
       position: relative
       left: -7px
+    strike
+      opacity: 0.25
   img
     position: absolute
     top: 105px
@@ -20,6 +54,15 @@
     font-style: normal
     position: absolute
     bottom: 90px
+
+.slide.is-default
+  h2
+    font-weight: bold
+
+    em
+      margin-top: -25px
+      color: black(0.3)
+      font-size: 40%
 
 .slide.is-bottom
   h2
@@ -181,3 +224,18 @@
   .sass
     float: left
     font-weight: bold
+
+.slide.is-scheme.is-factory
+  img
+    width: 800px
+
+.slide.is-scheme.is-service-locator
+  img
+    height: 400px
+    margin-top: -25px
+    margin-left: 124px
+
+.slide.is-scheme.is-container
+  img
+    height: 400px
+    margin-left: 102px
