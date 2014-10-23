@@ -93,7 +93,7 @@ module Helpers
   end
 
   def file_type(file)
-    `file -ib #{file}`.split(';').first
+    `file -Ib #{file}`.split(';').first
   end
 
   def include_statistics
