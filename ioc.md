@@ -412,10 +412,10 @@ App = Ember.Application.create({
 - зависимости превращаются в абстракции
 - настройка приложения производится в терминах абстракций
 
-## Спасибо за внимание
+## Вопросы
 !type with-em
 
-* Презентация: [demiazz.github.io/ioc-slides](http://demiazz.github.io/ioc-slides/)
+* Презентация: [demiazz.github.io/about-ioc](http://demiazz.github.io/about-ioc/)
 * [@demiazz](https://twitter.com/demiazz)
 
 !image evilmartians.png
