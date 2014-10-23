@@ -302,7 +302,7 @@ class Builder
   end
 
   def sections
-    @sections ||= ROOT.join('postcss.md').read
+    @sections ||= ROOT.join('ioc.md').read
       .split(/^##/).map.with_index do |text, index|
         index == 0 ? text : '##' + text
       end
@@ -331,7 +331,7 @@ end
 
 desc 'Build presentations all-in-one files'
 task :build => :clean do
-  html = ROOT.join('./build/postcss.html')
+  html = ROOT.join('./build/ioc.html')
   html.dirname.mkpath
   html.open('w') { |io| io << Builder.new(:standalone).to_html }
 end
