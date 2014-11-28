@@ -6,10 +6,12 @@ html lang="ru"
     title= title
     meta name="viewport" content="width=1274, user-scalable=no"
     - if development?
+      link rel="stylesheet" href="/fonts.css"
       link rel="stylesheet" href="/style.css"
       link rel="stylesheet" href="/ioc.css"
     - else
       style
+        = assets['fonts.css']
         = assets['style.css']
         = assets['ioc.css']
       = include_statistics
@@ -19,11 +21,6 @@ html lang="ru"
     - slides.each_with_index do |slide, i|
       section.slide id=(i + 1) class=slide.types.join(' ')
         div= slide.html
-
-    - if development?
-      link rel="stylesheet" href="/fonts.css"
-    - else
-      style= assets['fonts.css']
 
     - if development?
       script src="/jquery.js"
